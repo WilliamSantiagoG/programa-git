@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/stylesusario.css">
+    <title>Tu Página Web</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userBox = document.getElementById("userBox");
+            var welcomeText = document.getElementById("welcomeText");
+    
+            function mostrarTextoPersonalizado(texto) {
+                welcomeText.innerText = texto;
+                welcomeText.classList.remove("hidden");
+                userBox.classList.add("hidden");
+            }
+    
+            document.getElementById("menuUsuario").addEventListener("click", function() {
+                // Mostrar el cuadro de usuario
+                userBox.classList.remove("hidden");
+                welcomeText.classList.add("hidden");
+    
+                // Simular información de usuario (puedes obtenerla de alguna forma dinámica)
+                document.getElementById("userName").innerText = "Nombre de Usuario";
+                document.getElementById("userPhone").innerText = "Número de Teléfono";
+                document.getElementById("userEmail").innerText = "correo@example.com";
+                document.getElementById("userWhatsapp").innerText = "Número de WhatsApp";
+            });
+
+            document.getElementById("menuItemMenu").addEventListener("click", function() {
+                // Mostrar texto personalizado para Menú
+                mostrarTextoPersonalizado("Texto relacionado con el Menú");
+            });
+    
+            document.getElementById("menuEquipos").addEventListener("click", function() {
+                // Mostrar texto personalizado para Equipos
+                mostrarTextoPersonalizado("Información sobre Equipos");
+            });
+    
+            document.getElementById("menuControl").addEventListener("click", function() {
+                // Mostrar texto personalizado para Control
+                mostrarTextoPersonalizado("Control de la aplicación");
+            });
+    
+            document.getElementById("menuHistorial").addEventListener("click", function() {
+                // Mostrar texto personalizado para Historial
+                mostrarTextoPersonalizado("Historial de acciones");
+            });
+    
+            document.getElementById("menuAcercaDe").addEventListener("click", function() {
+                // Mostrar texto personalizado para Acerca de
+                mostrarTextoPersonalizado("Información sobre la aplicación");
+            });
+    
+        });
+    </script>
+</head>
+<body>
+    <div id="menu">
+        <div class="menuItem" id="menuItemMenu">
+            <img src="img/icons8-menú-50.png" alt="Menú">
+            <a href="#">Menú</a>
+        </div>
+        <div class="menuItem" id="menuUsuario">
+            <img src="img/usuario.png" alt="Usuario">
+            <a href="#">Usuario</a>
+        </div>
+        <div class="menuItem" id="menuEquipos">
+            <img src="img/Equipo.png" alt="Equipos">
+            <a href="#">Equipos</a>
+        </div>
+        <div class="menuItem" id="menuControl">
+            <img src="img/icons8-controlar-60.png" alt="Control">
+            <a href="#">Control</a>
+        </div>
+        <div class="menuItem" id="menuHistorial">
+            <img src="img/icons8-controlar-48.png" alt="Historial">
+            <a href="#">Historial</a>
+        </div>
+        <div class="menuItem" id="menuAcercaDe">
+            <img src="img/icons8-acerca-de-50.png" alt="Acerca de">
+            <a href="#">Acerca de</a>
+        </div>
+        <div class="menuItem" id="menuSalir">
+            <img src="img/icons8-salir-redondeado-50.png" alt="Salir">
+            <a href="index.html">Salir</a>
+        </div>
+    </div>
+    <div id="content">
+        <h1 id="welcomeText" class="hidden">Bienvenido a tu página web</h1>
+        <div id="userBox" class="hidden">
+            <p>Nombre: <span id="userName"></span></p>
+            <p>Teléfono: <span id="userPhone"></span></p>
+            <p>Correo: <span id="userEmail"></span></p>
+            <p>WhatsApp: <span id="userWhatsapp"></span></p>
+        </div>
+    </div>
+</body>
+</html>
